@@ -1,7 +1,7 @@
 .main {
-    max-width: 1200px; /* Limite maximale pour la largeur du main */
+    max-width: 768px; /* Limite maximale pour la largeur du main */
     margin: 0 auto; /* Centre le main horizontalement */
-    padding: 0 20px; /* Padding horizontal pour ajouter de l'espace */
+    padding: 0 0; /* Padding horizontal pour ajouter de l'espace */
     background-color: red;
 }
 
@@ -9,49 +9,48 @@
 .titre--big {
     text-align: center; /* Centre le titre horizontalement */
     font-size: 3.38em;
-    margin: 2rem 0;
+    margin: 5.06rem 2.25rem 3.38rem 2.25rem;
 }
 
 .titre--medium {
-    margin: 2rem 0;
     font-size: 2.25em;
+    text-align: center; /* Centre le titre horizontalement */
+    margin: 3.38rem 2.25rem 3.38rem 2.25rem;
 }
 
-.div {
-    box-sizing: border-box;
-}
-
-.about,
-.projets {
-    width: 100vw; /* Force la largeur à 100% de la vue */
-    margin-left: calc(-50vw + 50%); /* Centre l'élément en utilisant une astuce de margin */
+.about {
+    width: 100vw;
+    z-index: 3;
     position: relative;
 }
 
 .about__image {
-    display: block;
-    position: relative; /* Relative positioning for the image parent */
+    width: 100%;
+    z-index: 3;
+    position: relative;
 }
-
 
 .lien__formeBouton {
     position: absolute;
-    font-size: 1.5em;
     top: 1rem;
     left: 1rem;
+    z-index: 3;
+
     color: black;
+    background-color: transparent;
     border: 1px solid black;
-    padding: 0.44rem 2.25rem;
+    border-radius: 25px;
+    padding: 0.44rem 1.50rem;
     text-decoration: none;
-    border-radius: 2.25rem;
+    font-size: 1.50rem;
     text-transform: uppercase;
-    font-weight: bolder;
+    font-weight: 700;
 
     transition: all 0.3s ease-in-out;
 
-    &:hover, &:focus {
-        border: 1px solid black;
-        background-color: black;
+    &:hover,
+    &:focus {
         color: white;
+        background-color: black;
     }
 }

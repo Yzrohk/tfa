@@ -8,15 +8,28 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 11px;
-    right: 11px;
+    top: 0.67em;
+    right: 0.67em;
     z-index: 100;
+
+    transition: all 0.3s ease-in-out;
 }
 
 .burgermenu__svg {
     fill: #2b2b2b;
     width: 36px;
     height: 36px;
+}
+
+.burgermenu {
+    &:hover {
+        cursor: pointer;
+        background-color: black;
+
+        & svg {
+            fill: white;
+        }
+    }
 }
 
 .svg--inactive {

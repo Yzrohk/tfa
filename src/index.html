@@ -2,12 +2,31 @@
 <html lang="fr">
 
 <head>
-  <title>DWMA project</title>
+  <title>Portfolio</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="description" content="">
   <!-- Meta Partage -->
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@leonardisebastien">
+  <meta name="twitter:creator" content="@leonardisebastien">
+  <meta name="twitter:title" content="Portfolio - Sébastien Leonardi - DWT - HEAJ">
+  <meta name="twitter:description" content="Portfolio de Sébastien Leonardi - DWT - HEAJ">
+  <meta name="twitter:image" content="http://sebastien-leonardi.be/projets/tfa/assets/images/avatar.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:site_name" content="Portfolio - Sébastien Leonardi - DWT - HEAJ">
+  <meta property="og:title" content="Portfolio - Sébastien Leonardi - DWT - HEAJ">
+  <meta property="og:description" content="Portfolio de Sébastien Leonardi - DWT - HEAJ">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://sebastien-leonardi.be/projets/tfa">
+  <meta property="og:image" content="http://sebastien-leonardi.be/projets/tfa/assets/images/avatar.jpg">
+  <meta property="og:image:width" content="1800">
+  <meta property="og:image:height" content="945">
+
   <!-- Favicon -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -53,10 +72,7 @@
   <main class="main">
     <h1 class="titre titre--big">Sébastien Leonardi</h1>
     <div class="div about">
-      <a class="about__lien" href="about.html">
-        <img class="about__image" src="assets/images/avatar.jpg" srcset="assets/images/avatar@2x.jpg 2x"
-          alt="Avatar de Sébastien, une photo le représentant sur une falaise à côté de la mer">
-      </a>
+      <a class="about__lien" href="about.html"><span class="text__cacher">À propos de moi</span><img class="about__image" src="assets/images/avatar.jpg" srcset="assets/images/avatar@2x.jpg 2x" alt="Avatar de Sébastien, une photo le représentant sur une falaise à côté de la mer"></a>
       <a class="about__lien lien__formeBouton" href="about.html">À propos de moi</a>
     </div>
     <h2 class="titre titre--medium">Mes projets</h2>
@@ -66,26 +82,30 @@
       <button class="slider__nav slider__nav--prev">&lt;</button>
       <div class="slider">
         <div class="slider__slide">
-          <a href="lien1.html">
-            <img src="assets/images/readImAde_im.jpg" srcset="assets/images/readImAde_im@2x.jpg 2x"
+          <a href="http://sebastien-leonardi.be/projets/readimade/">
+            <span  class="text__cacher">Projet readImAde</span>
+            <img  class="projets__image" src="assets/images/readImAde_im.jpg" srcset="assets/images/readImAde_im@2x.jpg 2x"
               alt="Dessin d'une capsule de bière représentant le projet readImAde">
           </a>
         </div>
         <div class="slider__slide">
-          <a href="lien2.html">
-            <img src="assets/images/decembre_im.jpg" srcset="assets/images/decembre_im@2x.jpg 2x"
+          <a href="http://sebastien-leonardi.be/projets/decembre/">
+            <span  class="text__cacher">Projet décembre</span>
+            <img  class="projets__image" src="assets/images/decembre_im.jpg" srcset="assets/images/decembre_im@2x.jpg 2x"
               alt="Image de couverture de l'album de Ecstasy of Saint Theresa représentant le projet de décembre">
           </a>
         </div>
         <div class="slider__slide">
-          <a href="lien3.html">
-            <img src="assets/images/dataplay_im.jpg" srcset="assets/images/dataplay_im@2x.jpg 2x"
+          <a href="http://sebastien-leonardi.be/projets/dataplay/dataplay/">
+            <span  class="text__cacher">Projet Dataplay 2023</span>
+            <img class="projets__image"  src="assets/images/dataplay_im.jpg" srcset="assets/images/dataplay_im@2x.jpg 2x"
               alt="Logo de notre projet Dataplay 2023">
           </a>
         </div>
         <div class="slider__slide">
-          <a href="lien4.html">
-            <img src="assets/images/fyt_im.jpg" srcset="assets/images/fyt_im@2x.jpg 2x"
+          <a href="http://sebastien-leonardi.be/projets/rethinking-ux2024/">
+            <span  class="text__cacher">Projet RUX 2024</span>
+            <img class="projets__image"  src="assets/images/fyt_im.jpg" srcset="assets/images/fyt_im@2x.jpg 2x"
               alt="Screenshot d'un exemple de typographie du site RUX 2024">
           </a>
         </div>
@@ -97,13 +117,19 @@
         <span class="slider__indicator"></span>
         <span class="slider__indicator"></span>
       </div>
-      <button id="read-more" class="slider__read-more lirePlus">Lire plus</button>
+      <button id="lirePlus" class="slider__lirePlus lirePlus">Lire plus</button>
     </div>
     
     <div id="popup" class="popup">
       <div class="popup__content">
-        <span class="popup__close">&times;</span>
-        <p id="popup-text"></p>
+        <button class="popup__close">
+          <svg class="popup__svg" width="35px" height="35px" clip-rule="evenodd" fill-rule="evenodd"
+        stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z" />
+      </svg>
+        </button>    
+        <span id="popup__texte" class="popup__texte"></span>
       </div>
     </div>
     
@@ -120,19 +146,22 @@
 
   <footer class="footer">
     <div class="footer__liste">
-      <a>
+      <a class="footer__lien" href="https://www.instagram.com/sebastien_dwt/?hl=fr">
+        <span class="text__cacher">instagram</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path
             d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
         </svg>
       </a>
-      <a>
+      <a class="footer__lien" href="https://x.com/sebastien_dwt">
+        <span class="text__cacher">Twitter</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path
             d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
         </svg>
       </a>
-      <a>
+      <a class="footer__lien" href="mailto:sebastien.leonardi@student.heaj.be">
+        <span class="text__cacher">Contact</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path
             d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
@@ -140,9 +169,9 @@
       </a>
     </div>
     <div class="footer__liste footer__liste--droite">
-      <a href="https://dwt.heaj.be/">DWT</a>
+      <a class="footer__lien" href="https://dwt.heaj.be/">DWT</a>
       <p> - </p>
-      <a href="http://sebastien-leonardi.be">Sébastien Leonardi</a>
+      <a class="footer__lien" href="http://sebastien-leonardi.be">Sébastien Leonardi</a>
       <p> - 2023 ©</p>
     </div>
   </footer>

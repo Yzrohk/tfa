@@ -1,0 +1,10 @@
+.main, .footer {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+    .main, .footer {
+        max-width: 800px;
+    }
+}

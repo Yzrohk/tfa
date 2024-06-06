@@ -4,33 +4,33 @@ function burgerMenu() {
     var boutonBurgerMenu = document.querySelector(".burgermenu");
     var listeSvgBurgermenu = document.querySelectorAll(".burgermenu__svg");
     var menuListe = document.querySelector(".nav__menu");
-  
-    if (boutonBurgerMenu && listeSvgBurgermenu && menuListe) {
-      var activateBurgermenu = function activateBurgermenu() {
-        listeSvgBurgermenu.forEach(function (svg) {
-          if (svg.classList.contains("svg--active")) {
-            svg.classList.toggle("svg--inactive");
-            svg.classList.toggle("svg--active");
-          } else if (svg.classList.contains("svg--inactive")) {
-            svg.classList.toggle("svg--active");
-            svg.classList.toggle("svg--inactive");
-          }
-        });
-        menuListe.classList.toggle("nav__menu--active");
-      };
-  
-      boutonBurgerMenu.addEventListener("click", activateBurgermenu);
-    }
-  }
-  
-  burgerMenu();
 
-  document.addEventListener('DOMContentLoaded', () => {
+    if (boutonBurgerMenu && listeSvgBurgermenu && menuListe) {
+        var activateBurgermenu = function activateBurgermenu() {
+            listeSvgBurgermenu.forEach(function (svg) {
+                if (svg.classList.contains("svg--active")) {
+                    svg.classList.toggle("svg--inactive");
+                    svg.classList.toggle("svg--active");
+                } else if (svg.classList.contains("svg--inactive")) {
+                    svg.classList.toggle("svg--active");
+                    svg.classList.toggle("svg--inactive");
+                }
+            });
+            menuListe.classList.toggle("nav__menu--active");
+        };
+
+        boutonBurgerMenu.addEventListener("click", activateBurgermenu);
+    }
+}
+
+burgerMenu();
+
+document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slider__slide');
     const indicators = document.querySelectorAll('.slider__indicator');
-    const readMoreButton = document.getElementById('read-more');
+    const readMoreButton = document.getElementById('lirePlus');
+    const popupContent = document.getElementById('popup__texte');
     const popup = document.getElementById('popup');
-    const popupContent = document.getElementById('popup-text');
     const closeBtn = document.querySelector('.popup__close');
     const prevButton = document.querySelector('.slider__nav--prev');
     const nextButton = document.querySelector('.slider__nav--next');
@@ -80,13 +80,18 @@ function burgerMenu() {
         }, 500);
     }
 
-    function showPopup(content) {
-        popupContent.innerText = content;
-        popup.style.display = 'flex';
+    function showPopup(title, paragraph1, paragraph2, linkText, linkURL) {
+        popupContent.innerHTML = `
+            <h3>${title}</h3>
+            <p>${paragraph1}</p>
+            <p>${paragraph2}</p>
+            <a href="${linkURL}">${linkText}</a>
+        `;
+        popup.classList.add('popup--active');
     }
 
     function closePopup() {
-        popup.style.display = 'none';
+        popup.classList.remove('popup--active');
     }
 
     indicators.forEach((indicator, index) => {
@@ -97,20 +102,28 @@ function burgerMenu() {
 
     readMoreButton.addEventListener('click', () => {
         const contents = [
-            "Lorem ipsum dolor sit amet, readImAde description...",
-            "Lorem ipsum dolor sit amet, décembre description...",
-            "Lorem ipsum dolor sit amet, Dataplay description...",
-            "Lorem ipsum dolor sit amet, RUX 2024 description..."
+            {
+                title: "ReadImAde",
+                paragraph1: "ReadImAde est un projet sur lequel nous avions dû travailler au premier quadrimestre. Le but de ce projet était de changer la vision des choses qui nous entourent.",
+                paragraph2: "Nous avions dû trouver un objet et lui donner une identité.",
+                linkText: "En découvrir plus",
+                linkURL: "http://sebastien-leonardi.be/projets/readimade/"
+            },
+            {
+                title: "Titre de la slide 2",
+                paragraph1: "Paragraphe 1 de la slide 2...",
+                paragraph2: "Paragraphe 2 de la slide 2...",
+                linkText: "Lien vers la slide 2",
+                linkURL: "lien2.html"
+            },
+            // Ajoutez les données pour les autres slides ici
         ];
-        showPopup(contents[currentIndex]);
+
+        const { title, paragraph1, paragraph2, linkText, linkURL } = contents[currentIndex];
+        showPopup(title, paragraph1, paragraph2, linkText, linkURL);
     });
 
     closeBtn.addEventListener('click', closePopup);
-    popup.addEventListener('click', (e) => {
-        if (e.target === popup) {
-            closePopup();
-        }
-    });
 
     prevButton.addEventListener('click', () => {
         goToSlide(currentIndex - 1);

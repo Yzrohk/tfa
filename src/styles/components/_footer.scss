@@ -1,0 +1,36 @@
+.footer {
+    margin-top: 2.25rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid $grey_soft;
+}
+
+.footer__liste {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    &--droite {
+        justify-self: flex-end;
+        gap: 0rem;
+    }
+}
+
+.footer__lien {
+    color: black;
+    fill: black;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        color: rgb(46, 46, 46);
+        fill: rgb(46, 46, 46);
+        text-decoration: underline;
+    }
+}
+
+.text__cacher {
+    visibility: hidden;
+    position: absolute;
+}

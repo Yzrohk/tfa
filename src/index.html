@@ -60,34 +60,63 @@
       <a class="about__lien lien__formeBouton" href="about.html">À propos de moi</a>
     </div>
     <h2 class="titre titre--medium">Mes projets</h2>
-    <div class="div projets slider-container">
+    
+
+    <div class="div projets slider__container">
+      <button class="slider__nav slider__nav--prev">&lt;</button>
       <div class="slider">
-        <div class="slide">
-          <img src="assets/images/readImAde_im.jpg" srcset="assets/images/readImAde_im@2x.jpg 2x"
-            alt="Dessin d'une capsule de bière représentant le projet readImAde">
+        <div class="slider__slide">
+          <a href="lien1.html">
+            <img src="assets/images/readImAde_im.jpg" srcset="assets/images/readImAde_im@2x.jpg 2x"
+              alt="Dessin d'une capsule de bière représentant le projet readImAde">
+          </a>
         </div>
-        <div class="slide">
-          <img src="assets/images/decembre_im.jpg" srcset="assets/images/decembre_im@2x.jpg 2x"
-            alt="Image de couverture de l'album de Ecstasy of Saint Theresa représentant le projet de décembre">
+        <div class="slider__slide">
+          <a href="lien2.html">
+            <img src="assets/images/decembre_im.jpg" srcset="assets/images/decembre_im@2x.jpg 2x"
+              alt="Image de couverture de l'album de Ecstasy of Saint Theresa représentant le projet de décembre">
+          </a>
         </div>
-        <div class="slide">
-          <img src="assets/images/dataplay_im.jpg" srcset="assets/images/dataplay_im@2x.jpg 2x"
-            alt="Logo de notre projet Dataplay 2023">
+        <div class="slider__slide">
+          <a href="lien3.html">
+            <img src="assets/images/dataplay_im.jpg" srcset="assets/images/dataplay_im@2x.jpg 2x"
+              alt="Logo de notre projet Dataplay 2023">
+          </a>
         </div>
-        <div class="slide">
-          <img src="assets/images/fyt_im.jpg" srcset="assets/images/fyt_im@2x.jpg 2x"
-            alt="Screenshot d'un exemple de typographie du site RUX 2024">
+        <div class="slider__slide">
+          <a href="lien4.html">
+            <img src="assets/images/fyt_im.jpg" srcset="assets/images/fyt_im@2x.jpg 2x"
+              alt="Screenshot d'un exemple de typographie du site RUX 2024">
+          </a>
         </div>
       </div>
-      <div class="indicators">
-        <span class="indicator active"></span>
-        <span class="indicator"></span>
-        <span class="indicator"></span>
-        <span class="indicator"></span>
+      <button class="slider__nav slider__nav--next">&gt;</button>
+      <div class="slider__indicators">
+        <span class="slider__indicator slider__indicator--active"></span>
+        <span class="slider__indicator"></span>
+        <span class="slider__indicator"></span>
+        <span class="slider__indicator"></span>
       </div>
-      <button id="read-more" class="read-more lirePlus">Lire plus</button>
+      <button id="read-more" class="slider__read-more lirePlus">Lire plus</button>
     </div>
+    
+    <div id="popup" class="popup">
+      <div class="popup__content">
+        <span class="popup__close">&times;</span>
+        <p id="popup-text"></p>
+      </div>
+    </div>
+    
+    
   </main>
+
+
+
+
+
+
+
+
 
   <footer class="footer">
     <div class="footer__liste">

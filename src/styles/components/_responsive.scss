@@ -1,6 +1,15 @@
 .main, .footer {
     max-width: 500px;
     margin: 0 auto;
+    margin-top: 2.25rem;
+}
+
+.main--about {
+    display: grid;
+    grid-template-columns: 90%;
+    margin: 0 auto; /* Centre horizontalement */
+    flex-direction: column; 
+    justify-content: center;
 }
 
 @media (min-width: 1200px) {

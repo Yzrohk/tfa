@@ -6,7 +6,8 @@ body, html {
 }
 
 .hidden {
-    display: none;
+    position: absolute;
+    visibility: hidden;
 }
 
 img, video, iframe {

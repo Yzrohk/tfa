@@ -104,19 +104,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const contents = [
             {
                 title: "ReadImAde",
-                paragraph1: "ReadImAde est un projet sur lequel nous avions dû travailler au premier quadrimestre. Le but de ce projet était de changer la vision des choses qui nous entourent.",
-                paragraph2: "Nous avions dû trouver un objet et lui donner une identité.",
+                paragraph1: "ReadImAde est un&nbsp;projet sur lequel nous avions dû travailler au&nbsp;premier quadrimestre. Le but de ce&nbsp;projet était de changer la&nbsp;vision des choses qui nous&nbsp;entourent.",
+                paragraph2: "Nous avions dû trouver un&nbsp;objet et lui donner une&nbsp;identité.",
                 linkText: "En découvrir plus",
                 linkURL: "http://sebastien-leonardi.be/projets/readimade/"
             },
             {
-                title: "Titre de la slide 2",
-                paragraph1: "Paragraphe 1 de la slide 2...",
-                paragraph2: "Paragraphe 2 de la slide 2...",
-                linkText: "Lien vers la slide 2",
-                linkURL: "lien2.html"
+                title: "Projet Décembre",
+                paragraph1: "Le projet intitulé \"Décembre\" est un&nbsp;projet où nous devions choisir un&nbsp;article dans une&nbsp;liste et créer une&nbsp;page dans le style e-commence afin de&nbsp;vendre cet article.",
+                paragraph2: "J'ai choisi l\'album appelé&nbsp;Free-d du groupe Ecstasy of Saint&nbsp;Theresa.",
+                linkText: "En découvrir plus",
+                linkURL: "http://sebastien-leonardi.be/projets/decembre/"
             },
-            // Ajoutez les données pour les autres slides ici
+            {
+              title: "Dataplay",
+              paragraph1: "Dataplay est un&nbsp;travail de groupe. À 5, nous avions choisi un thème par lequel nous&nbsp;étions intéressés.",
+              paragraph2: "Nous avons donc conçu un&nbsp;jeu sur la carte de l\'Europe, avec des&nbsp;cartes à collectionner et des&nbsp;questions sur les pays.",
+              linkText: "En découvrir plus",
+              linkURL: "http://sebastien-leonardi.be/projets/dataplay/dataplay/"
+            },
+            {
+              title: "Rethinking UX",
+              paragraph1: "Rethinking UX 2024 est un&nbsp;projet réalisé d\'abord en groupe. Le&nbsp;but était de repenser les locaux dans lesquels nous&nbsp;travaillons.",
+              paragraph2: "Nous avons donc décidé de s\'attaquer aux typographies, en créant des&nbsp;posters permettant d\'aider les&nbsp;élèves à choisir des polices.",
+              linkText: "En découvrir plus",
+              linkURL: "http://sebastien-leonardi.be/projets/rethinking-ux2024/"
+            }
         ];
 
         const { title, paragraph1, paragraph2, linkText, linkURL } = contents[currentIndex];

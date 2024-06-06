@@ -12,8 +12,12 @@
 }
 
 .nav__lien, .about__lien, .lirePlus {
-    font-family: "Reddit Mono", monospace;
+    font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: bolder;
     font-style: normal;
+
+    &:hover {
+        cursor: pointer;
+    }
 }

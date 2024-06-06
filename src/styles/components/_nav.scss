@@ -10,6 +10,7 @@
     position: absolute;
     top: 11px;
     right: 11px;
+    z-index: 10;
 }
 .burgermenu__svg {
     fill: #2b2b2b;
@@ -17,10 +18,15 @@
     height: 36px;
 }
 
+.svg--inactive {
+    display: none;
+}
+
 .nav__menu {
-    position: absolute;
+    position: fixed;
     top: 0px;
-    right: -100%;
+    right: 0px; /* Déplace le menu hors de l'écran à droite */
+    transform: translateX(100%);
 
 
     display: grid;
@@ -31,6 +37,12 @@
     background-color: #ebebeb;
     grid-template: 300px 1fr;
     align-items: center;
+
+    transition: all 0.5s ease-in-out;
+
+    &--active {
+        transform: translateX(0);
+    }
 }
 
 .nav__liste {

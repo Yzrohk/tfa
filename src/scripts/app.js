@@ -21,6 +21,13 @@ function burgerMenu() {
 
         boutonBurgerMenu.addEventListener("click", activateBurgermenu);
     }
+    
+    var liensMenu = document.querySelectorAll(".nav__menu li a");
+    liensMenu.forEach(function(lien) {
+        lien.addEventListener("click", function() {
+            menuListe.classList.remove("nav__menu--active");
+        });
+    });
 }
 
 burgerMenu();
@@ -200,7 +207,7 @@ if (document.getElementById('boutonReset')) {
         function initGame() {
             word = words[Math.floor(Math.random() * words.length)];
             guessedWord = '_'.repeat(word.length);
-            lives = 7;
+            lives = 8;
     
             wordContainer.classList.remove('lostWord');
             wordContainer.classList.remove('wonWord'); // Retire la classe wonWord
@@ -227,9 +234,10 @@ if (document.getElementById('boutonReset')) {
         }
     
         // Vérifie si la lettre proposée est dans le mot
+        // Vérifie si la lettre proposée est dans le mot
         function guessLetter(letter) {
             if (lives === 0 || guessedWord === word) return; // Arrête le jeu si le joueur a perdu ou gagné
-    
+
             if (word.includes(letter)) {
                 for (let i = 0; i < word.length; i++) {
                     if (word[i] === letter) {
@@ -241,7 +249,10 @@ if (document.getElementById('boutonReset')) {
                     score++;
                     scoreDisplay.textContent = score;
                     wordContainer.classList.add('wonWord');
+                    animateWordWon();
                     setTimeout(initGame, 2000);
+                } else {
+                    animateLetterGuessed(letter);
                 }
             } else {
                 lives--;
@@ -249,17 +260,60 @@ if (document.getElementById('boutonReset')) {
                 if (lives === 0) {
                     score = 0;
                     scoreDisplay.textContent = score;
-                    // Affiche le mot en rouge
                     wordContainer.textContent = word.split('').join(' ');
                     wordContainer.classList.add('lostWord');
+                    animateWordLost();
                     setTimeout(initGame, 2000);
+                } else {
+                    animateLetterGuessed(letter);
                 }
             }
         }
+
     
         // Met à jour l'affichage des vies restantes
         function updateLivesDisplay() {
             livesDisplay.textContent = lives;
+        }
+    
+        // Animation lorsque la lettre est devinée
+        // Animation lorsque la lettre est devinée
+        function animateLetterGuessed(letter) {
+            const letterBtn = document.querySelector(`#letters button:nth-child(${letter.charCodeAt(0) - 96})`);
+            if (word.includes(letter)) {
+                letterBtn.classList.add('animate-correct-guess'); // Ajoute une classe pour l'animation de la lettre correctement devinée
+            } else {
+                letterBtn.classList.add('animate-incorrect-guess'); // Ajoute une classe pour l'animation de la lettre incorrectement devinée
+            }
+            setTimeout(() => {
+                letterBtn.classList.remove('animate-correct-guess'); // Retire la classe après 1 seconde
+                letterBtn.classList.remove('animate-incorrect-guess'); // Retire la classe après 1 seconde
+            }, 1000);
+        }
+
+
+
+
+        // Animation pour célébrer la victoire du joueur
+        function animateWordWon() {
+            // Ajoutez une animation pour célébrer la victoire du joueur, par exemple, des confettis qui tombent ou un écran qui tremble
+            // Vous pouvez utiliser des classes CSS pour définir les animations
+            const gameContainer = document.querySelector('.pendu');
+            gameContainer.classList.add('animate-word-won');
+            setTimeout(() => {
+                gameContainer.classList.remove('animate-word-won');
+            }, 2000);
+        }
+    
+        // Animation pour signaler la défaite du joueur
+        function animateWordLost() {
+            // Ajoutez une animation pour signaler la défaite du joueur, par exemple, faire bouger le pendu ou afficher un écran clignotant
+            // Vous pouvez utiliser des classes CSS pour définir les animations
+            const gameContainer = document.querySelector('.pendu');
+            gameContainer.classList.add('animate-word-lost');
+            setTimeout(() => {
+                gameContainer.classList.remove('animate-word-lost');
+            }, 2000);
         }
     
         // Réinitialise le jeu lorsque le joueur clique sur "Nouvelle partie"

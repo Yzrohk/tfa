@@ -14,13 +14,15 @@
     font-size: 2em;
     display: inline-block;
     margin-bottom: 1em;
+    transition: color 0.5s ease-in-out; /* Effet de transition pour la couleur du mot caché */
 }
 
 .wonWord {
-    color: green;
+    color: green; /* La couleur est changée par l'animation CSS */
 }
+
 .lostWord {
-    color: red;
+    color: red; /* La couleur est changée par l'animation CSS */
 }
 
 .guessesLeft {
@@ -55,6 +57,8 @@
     border: 1px solid $grey_softer;
     cursor: pointer;
 
+    transition: transform 0.3s ease-in-out;
+
     &:hover, &:focus {
         background-color: rgb(231, 231, 231);
     }
@@ -84,4 +88,92 @@
 .score {
     margin-top: 0;
     font-weight: bold;
+}
+
+/* Animation pour la lettre correctement devinée */
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animation pour célébrer la victoire */
+@keyframes celebrate {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animation pour signaler la défaite */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.animate-word-won {
+    animation: celebrate 2s ease;
+}
+
+.animate-word-lost {
+    animation: shake 2s ease;
+}
+
+/* Animation pour la lettre correctement devinée */
+@keyframes correct-guess {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: rgb(168, 255, 168);
+    }
+}
+
+/* Animation pour la lettre incorrectement devinée */
+@keyframes incorrect-guess {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: rgb(255, 159, 159);
+    }
+}
+
+/* Appliquer les animations aux éléments correspondants */
+.animate-correct-guess {
+    animation: correct-guess 1s forwards;
+}
+
+.animate-incorrect-guess {
+    animation: incorrect-guess 1s forwards;
 }

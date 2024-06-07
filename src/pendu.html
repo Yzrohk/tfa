@@ -61,85 +61,27 @@
     <div class="nav__menu">
       <ul class="nav__liste">
         <li class="nav__el"><a href="index.html" class="nav__lien">Home</a></li>
-        <li class="nav__el"><a href="index.html#projets" class="nav__lien nav__lien--smaller">Projets</a></li>
-        <li class="nav__el"><a href="about.html" class="nav__lien nav__lien--actif">À propos</a></li>
-        <li class="nav__el"><a href="#" class="nav__lien nav__lien--smaller">Testlien</a></li>
-        <li class="nav__el"><a href="#" class="nav__lien nav__lien--smaller">Testlien</a></li>
+        <li class="nav__el"><a href="index.html#projets" class="nav__lien nav__lien--smaller">Mes projets</a></li>
+        <li class="nav__el"><a href="index.html#etudiant" class="nav__lien nav__lien--smaller">L'étudiant</a></li>
+        <li class="nav__el"><a href="index.html#competences" class="nav__lien nav__lien--smaller">Mes compétences</a></li>
+        <li class="nav__el"><a href="pendu.html" class="nav__lien nav__lien--actif">Pendu</a></li>
       </ul>
     </div>
   </nav>
 
   <main class="main main--about">
 
-    <h1 class="titre titre--big">Qui suis-je?</h1>
-
-    <div class="div citation">
-      <figure class="citation__figure">
-        <blockquote class="citation__contenu">
-          <p class="citation__texte">«Dès qu'on approche un être&nbsp;humain, on touche à&nbsp;l'inconnu.»</p>
-        </blockquote>
-        <figcaption class="citation__legend">
-          <cite class="citation__auteur"><span>Edouard Estaunié</span></cite>
-        </figcaption>
-      </figure>
-    </div>
-
-    <div class="div">
-      <h2 class="titre titre--medium">L'étudiant</h1>
-        <div class="separation">
-          <div class="colGauche">
-            <p class="para"> Je m'appelle Sébastien Leonardi. Je suis un&nbsp;étudiant de 23&nbsp;ans, actuellement en
-              2ème&nbsp;année à la Haute École Albert Jacquard. </p>
-            <p class="para">J'ai choisi l'option Web&nbsp;Transmédia, car j'ai un&nbsp;point faible pour le
-              développement de sites webs. Cela fait depuis plusieurs années que j'apprends à en créer. J'ai un penchant
-              pour le&nbsp;back-end, même si je n'ai pas pu beaucoup en faire pour&nbsp;l'instant. J'ai beaucoup aimé
-              utiliser le&nbsp;PHP ainsi que les bases de données lors de mes&nbsp;études secondaires.</p>
-          </div>
-          <div class="colDroite">
-            <img class="img__fond" src="assets/images/avatar_original_png_decoupe.png" alt="Fond ">
-          </div>
-        </div>
-    </div>
-
-    <div class="div competences">
-      <h2 class="titre titre--medium">Mes compétences</h1>
-        <div class="competences__grille">
-          <div class="competence competence--html">
-            <span>HTML</span>
-          </div>
-          <div class="competence competence--css">
-            <span>CSS</span>
-          </div>
-          <div class="competence competence--js">
-            <span>JavaScript</span>
-          </div>
-          <div class="competence competence--chatgpt">
-            <span>ChatGPT</span>
-          </div>
-        </div>
-    </div>
-
-    <div class="div">
-      <h2 class="titre titre--medium"></h2>
-    </div>
-
-    <div class="div">
-      <h2 class="titre titre--medium">Mes projets</h2>
-      <div>
-        <p class="para">Au cours des années précédentes, j'ai eu l'occasion de travailler sur plusieurs projets
-          différents. J'espère néanmoins avoir la possibilité de travailler sur plus de projets. J'aimerai découvrir les
-          points sur lesquels je n'ai jamais travaillé. Pouvoir explorer de nouveaux languages ou de nouveaux logiciels
-          serait quelque chose qui me plairait beaucoup.</p>
-        <a href="index.html">Découvrez mes précédents travaux</a>
+    <div class="pendu">
+      <h2 class="titre titre--medium">JOUONS UN&nbsp;PEU</h2>
+      <div class="wordContainer">
+          <div id="hiddenWord" class="hiddenWord"></div>
       </div>
-    </div>
-
-    <div class="div">
-      <img class="dataplay_fond1" src="assets/images/dataplay_im.jpg" alt="Logo du projet dataplay">
-      <img class="dataplay_fond2" src="assets/images/dataplay_im.jpg" alt="Logo du projet dataplay">
-      <img class="dataplay_fond3" src="assets/images/dataplay_im.jpg" alt="Logo du projet dataplay">
-      <img class="dataplay_fond4" src="assets/images/dataplay_im.jpg" alt="Logo du projet dataplay">
-      <img class="dataplay_fond5" src="assets/images/dataplay_im.jpg" alt="Logo du projet dataplay">
+      <div class="numeros">
+        <div class="guessesLeft">Vies restantes : <span id="vies">7</span></div>
+        <div id="score">Score : <span id="points">0</span></div>
+      </div>
+      <div id="letters"></div>
+      <button id="boutonReset" class="boutonReset">Nouvelle partie</button>
     </div>
 
   </main>

@@ -1,13 +1,12 @@
 .main, .footer {
     max-width: 500px;
-    margin: 0 auto;
-    margin-top: 2.25rem;
+    margin-top: 2.25rem auto 1em auto;
 }
 
 .main--about {
     display: grid;
     grid-template-columns: 90%;
-    margin: 0 auto; /* Centre horizontalement */
+    margin: 0 auto;
     flex-direction: column; 
     justify-content: center;
 }
@@ -20,6 +19,61 @@
         display: grid;
         max-width: 90%;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .burgermenu {
+        display: none;
+    }
+
+    .nav__menu {
+        width: 90%;
+        margin: auto;
+        position: fixed;
+        display: flex;
+        top: 0;
+        left: 0;
+        transform: none;
+        height: auto;
+        flex-direction: row;
+        background-color: white;
+        border-bottom: 1px solid $grey_soft;
+    }
+    
+    .nav__liste {
+        display: flex;
+        width: 100%;
+        list-style-type: none;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 0;
+        margin: 0;
+        max-width: none;
+        gap: 0;
+    }
+    
+    .nav__liste > .nav__el {
+        flex: auto; /* Faire en sorte que chaque élément de la liste prenne une part égale de l'espace disponible */
+        display: flex; /* Utiliser flex pour permettre un alignement facile du contenu */
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .nav__lien {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-size: 1em;
+        padding: 1rem;
+        box-sizing: border-box;
+        line-height: normal;
+        height: 100%; /* S'assurer que l'élément prend toute la hauteur disponible */
+        width: 100%; /* S'assurer que l'élément prend toute la largeur disponible */
+    }
+
+    .footer {
+        max-width: 90%;
     }
 
     .titre--big {
@@ -57,5 +111,75 @@
     .hiddenDesktop {
         visibility: hidden;
         position: absolute;
+    }
+
+    .titre--big, .titre--medium {
+        margin: 3.38em 0 2.25em 0;
+    }
+
+    .grille {
+        margin-top: 5.06rem;
+    }
+
+    .competences__grille {
+        grid-template-rows: none;
+        gap: 1.5rem;
+    }
+
+    .footer {
+        margin-top: 5.06em;
+    }
+}
+
+@media (min-width: 1000px) {
+    .main, .footer, .nav__menu {
+        max-width: 70%;
+        font-size: 19px;
+    }
+
+    .img__fond {
+        width: 70%;
+    }
+
+    .separation {
+        grid-template-columns: 50% 40%;
+    }
+}
+
+@media (min-width: 1100px) {
+    .img__fond {
+        width: 60%;
+    }
+    .separation {
+        grid-template-columns: 60% 30%;
+    }
+}
+@media (min-width: 1200px) {
+    .main, .footer, .nav__menu {
+        font-size: 20px;
+    }
+    .img__fond {
+        width: 100%;
+    }
+    .separation {
+        grid-template-columns: 60% 20%;
+    }
+}
+
+@media (min-width: 1300px) {
+    .main, .footer, .nav__menu {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .main, .footer, .nav__menu {
+        max-width: 60%;
+    }
+}
+
+@media (min-width: 1700px) {
+    .main, .footer, .nav__menu {
+        max-width: 50%;
     }
 }

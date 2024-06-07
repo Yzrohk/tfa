@@ -1,15 +1,13 @@
 .titre--big {
     text-align: center;
-    /* Centre le titre horizontalement */
     font-size: 3.38em;
-    margin: 5.06rem 2.25rem 3.38rem 2.25rem;
+    margin: 2.25em 0 1.5em 0;
 }
 
 .titre--medium {
     font-size: 2.25em;
     text-align: center;
-    /* Centre le titre horizontalement */
-    margin: 5.06rem 2.25rem 3.38rem 2.25rem;
+    margin: 2.25em 0 1.5em 0;
 }
 
 //********************************
@@ -17,7 +15,7 @@
 //********************************
 
 .about, .projets {
-    box-shadow: 0px 0px 10px $grey_softer;
+    box-shadow: 0px 0px 10px rgb(235 235 235);
     z-index: 3;
     position: relative;
 }
@@ -277,20 +275,21 @@
 }
 
 .citation {
-    margin-top: 3.38rem;
+    margin-top: 3.38em;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .citation__figure {
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .citation__contenu {
-    width: 80%;
+    width: 100%;
     font-style: italic;
 }
 .citation__legend {
@@ -458,7 +457,7 @@
 .boutonReset {
     font-family: "Outfit", sans-serif;
     text-transform: uppercase;
-    margin-top: 2.25rem;
+    margin-top: 2.25em;
     background-color: transparent;
     color: #4CAF50;
     font-weight: 700;

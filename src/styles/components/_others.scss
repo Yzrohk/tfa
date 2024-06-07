@@ -5,6 +5,10 @@ body, html {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth; /* Activer le défilement fluide */
+}
+
 .hidden {
     position: absolute;
     visibility: hidden;

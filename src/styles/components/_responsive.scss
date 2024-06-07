@@ -1,6 +1,6 @@
 .main, .footer {
     max-width: 500px;
-    margin-top: 2.25rem auto 1em auto;
+    margin: 2.25rem auto 1em auto;
 }
 
 .main--about {
@@ -129,6 +129,11 @@
     .footer {
         margin-top: 5.06em;
     }
+
+    .popup__content {
+        height: 40%;
+        border-radius: 2.25em 2.25em 0 0;
+    }
 }
 
 @media (min-width: 1000px) {
@@ -143,6 +148,19 @@
 
     .separation {
         grid-template-columns: 50% 40%;
+    }
+
+    .popup__content {
+        height: 100%;
+        width: 40%;
+        border-radius: 0 2.25em 2.25em 0;
+        z-index: 101;
+        border-top: none;
+        border-right: 1px #2b2b2b solid;
+    }
+
+    .popup {
+        z-index: 101;
     }
 }
 

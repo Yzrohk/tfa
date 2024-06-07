@@ -152,7 +152,7 @@
 
     .popup__content {
         height: 100%;
-        width: 40%;
+        width: 60%;
         border-radius: 0 2.25em 2.25em 0;
         z-index: 101;
         border-top: none;
@@ -161,6 +161,10 @@
 
     .popup {
         z-index: 101;
+    }
+
+    .popup__texte {
+        width: 40ch;
     }
 }
 
@@ -187,6 +191,10 @@
 @media (min-width: 1300px) {
     .main, .footer, .nav__menu {
         font-size: 24px;
+    }
+
+    .popup__content {
+        width: 50%;
     }
 }
 

@@ -13,6 +13,9 @@
 }
 
 @media (min-width: 768px) {
+    .body {
+        font-size: 18px;
+    }
     .main {
         display: grid;
         max-width: 90%;
@@ -32,5 +35,27 @@
 
     .grille {
         grid-column: 1 / -1;
+    }
+
+    .img__fond {
+        width: 60%;
+    }
+
+    .separation {
+        grid-template-columns: 40% 40%;
+        justify-content: space-between;
+    }
+
+    .competences__grille {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .pendu {
+        grid-column: 1 / -1;
+    }
+
+    .hiddenDesktop {
+        visibility: hidden;
+        position: absolute;
     }
 }

@@ -1,5 +1,6 @@
 "use strict";
 
+// Fonction du burgermenu
 function burgerMenu() {
     var boutonBurgerMenu = document.querySelector(".burgermenu");
     var listeSvgBurgermenu = document.querySelectorAll(".burgermenu__svg");
@@ -22,6 +23,7 @@ function burgerMenu() {
         boutonBurgerMenu.addEventListener("click", activateBurgermenu);
     }
     
+    // Cache le burgermenu quand on clique sur un lien
     var liensMenu = document.querySelectorAll(".nav__menu li a");
     liensMenu.forEach(function(lien) {
         lien.addEventListener("click", function() {
@@ -48,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     let isAnimating = false;
 
-    // Clone first and last slide for infinite loop effect
     const firstSlide = slides[0].cloneNode(true);
     const lastSlide = slides[totalSlides - 1].cloneNode(true);
 
@@ -136,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
               paragraph1: "Rethinking UX 2024 est un&nbsp;projet réalisé d\'abord en groupe. Le&nbsp;but était de repenser les locaux dans lesquels nous&nbsp;travaillons.",
               paragraph2: "Nous avons donc décidé de s\'attaquer aux typographies, en créant des&nbsp;posters permettant d\'aider les&nbsp;élèves à choisir des polices.",
               linkText: "En découvrir plus",
-              linkURL: "http://sebastien-leonardi.be/projets/rethinking-ux2024/"
+              linkURL: "http://sebastien-leonardi.be/projets/rethinking-ux/"
             }
         ];
 
@@ -181,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initial update to set up slider position
     updateSlider(currentIndex, false);
 });
 }
@@ -190,13 +190,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 if (document.getElementById('boutonReset')) {
     if (document.getElementById('boutonReset')) {
-        // Liste de mots à deviner
         const words = ['hello', 'world', 'javascript', 'ordinateur', 'programmation', 'algorithme', 'internet', 'application', 'developpeur', 'balise', 'site', 'mobile', 'ordinateur', 'tablette', 'souris', 'clavier', 'portfolio', 'logiciel', 'processeur', 'ecran', 'variable', 'constante', 'fonction', 'boucle', 'condition', 'interface', 'experience'];
     
-        let word; // Mot à deviner
-        let guessedWord; // Mot caché (avec les lettres devinées)
-        let lives; // Vies restantes
-        let score = 0; // Score du joueur
+        let word;
+        let guessedWord;
+        let lives;
+        let score = 0;
     
         const wordContainer = document.getElementById('hiddenWord');
         const livesDisplay = document.getElementById('vies');
@@ -210,7 +209,7 @@ if (document.getElementById('boutonReset')) {
             lives = 8;
     
             wordContainer.classList.remove('lostWord');
-            wordContainer.classList.remove('wonWord'); // Retire la classe wonWord
+            wordContainer.classList.remove('wonWord');
             displayWord();
             displayLetters();
             updateLivesDisplay();
@@ -234,9 +233,8 @@ if (document.getElementById('boutonReset')) {
         }
     
         // Vérifie si la lettre proposée est dans le mot
-        // Vérifie si la lettre proposée est dans le mot
         function guessLetter(letter) {
-            if (lives === 0 || guessedWord === word) return; // Arrête le jeu si le joueur a perdu ou gagné
+            if (lives === 0 || guessedWord === word) return;
 
             if (word.includes(letter)) {
                 for (let i = 0; i < word.length; i++) {
@@ -277,17 +275,16 @@ if (document.getElementById('boutonReset')) {
         }
     
         // Animation lorsque la lettre est devinée
-        // Animation lorsque la lettre est devinée
         function animateLetterGuessed(letter) {
             const letterBtn = document.querySelector(`#letters button:nth-child(${letter.charCodeAt(0) - 96})`);
             if (word.includes(letter)) {
-                letterBtn.classList.add('animate-correct-guess'); // Ajoute une classe pour l'animation de la lettre correctement devinée
+                letterBtn.classList.add('animate-correct-guess');
             } else {
-                letterBtn.classList.add('animate-incorrect-guess'); // Ajoute une classe pour l'animation de la lettre incorrectement devinée
+                letterBtn.classList.add('animate-incorrect-guess');
             }
             setTimeout(() => {
-                letterBtn.classList.remove('animate-correct-guess'); // Retire la classe après 1 seconde
-                letterBtn.classList.remove('animate-incorrect-guess'); // Retire la classe après 1 seconde
+                letterBtn.classList.remove('animate-correct-guess');
+                letterBtn.classList.remove('animate-incorrect-guess');
             }, 1000);
         }
 
@@ -296,8 +293,6 @@ if (document.getElementById('boutonReset')) {
 
         // Animation pour célébrer la victoire du joueur
         function animateWordWon() {
-            // Ajoutez une animation pour célébrer la victoire du joueur, par exemple, des confettis qui tombent ou un écran qui tremble
-            // Vous pouvez utiliser des classes CSS pour définir les animations
             const gameContainer = document.querySelector('.pendu');
             gameContainer.classList.add('animate-word-won');
             setTimeout(() => {
@@ -307,8 +302,6 @@ if (document.getElementById('boutonReset')) {
     
         // Animation pour signaler la défaite du joueur
         function animateWordLost() {
-            // Ajoutez une animation pour signaler la défaite du joueur, par exemple, faire bouger le pendu ou afficher un écran clignotant
-            // Vous pouvez utiliser des classes CSS pour définir les animations
             const gameContainer = document.querySelector('.pendu');
             gameContainer.classList.add('animate-word-lost');
             setTimeout(() => {
@@ -319,11 +312,10 @@ if (document.getElementById('boutonReset')) {
         // Réinitialise le jeu lorsque le joueur clique sur "Nouvelle partie"
         document.getElementById('boutonReset').addEventListener('click', () => {
             initGame();
-            score = 0; // Réinitialise le score à zéro
-            scoreDisplay.textContent = score; // Met à jour l'affichage du score
+            score = 0;
+            scoreDisplay.textContent = score;
         });
     
-        // Démarrage du jeu
         initGame();
     }
     

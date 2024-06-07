@@ -73,9 +73,9 @@
     <h1 class="titre titre--big">Sébastien Leonardi</h1>
     <div class="div about">
       <a class="about__lien" href="about.html"><span class="text__cacher">À propos de moi</span><img class="about__image" src="assets/images/avatar.jpg" srcset="assets/images/avatar@2x.jpg 2x" alt="Avatar de Sébastien, une photo le représentant sur une falaise à côté de la mer"></a>
-      <a class="about__lien lien__formeBouton" href="about.html">À propos de moi</a>
+      <a class="about__lien lien__formeBouton hidden" href="about.html">À propos de moi</a>
     </div>
-    <h2 class="titre titre--medium">Mes projets</h2>
+    <h2 class="titre titre--medium hiddenDesktop">Mes projets</h2>
     
 
     <div class="div projets slider__container" id="projets">
@@ -132,7 +132,75 @@
         <span id="popup__texte" class="popup__texte"></span>
       </div>
     </div>
-    
+
+    <div class="grille">
+      <div class="div citation">
+        <figure class="citation__figure">
+          <blockquote class="citation__contenu">
+            <p class="citation__texte">«Dès qu'on approche un être&nbsp;humain, on touche à&nbsp;l'inconnu.»</p>
+          </blockquote>
+          <figcaption class="citation__legend">
+            <cite class="citation__auteur"><span>Edouard Estaunié</span></cite>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="div">
+        <h2 class="titre titre--medium">L'étudiant</h2>
+          <div class="separation">
+            <div class="colGauche">
+              <p class="para"> Je m'appelle Sébastien Leonardi. Je suis un&nbsp;étudiant de 23&nbsp;ans, actuellement en
+                2ème&nbsp;année à la Haute École Albert Jacquard. </p>
+              <p class="para">J'ai choisi l'option Web&nbsp;Transmédia, car j'ai un&nbsp;point faible pour le
+                développement de sites webs. Cela fait depuis plusieurs années que j'apprends à en créer. J'ai un penchant
+                pour le&nbsp;back-end, même si je n'ai pas pu beaucoup en faire pour&nbsp;l'instant. J'ai beaucoup aimé
+                utiliser le&nbsp;PHP ainsi que les bases de données lors de mes&nbsp;études secondaires.</p>
+            </div>
+            <div class="colDroite">
+              <img class="img__fond" src="assets/images/avatar_original_png_decoupe.png" alt="Fond ">
+            </div>
+          </div>
+      </div>
+
+      <div class="div competences">
+        <h2 class="titre titre--medium">Mes compétences</h2>
+          <div class="competences__grille">
+            <div class="competence competence--html">
+              <span>HTML</span>
+            </div>
+            <div class="competence competence--css">
+              <span>CSS</span>
+            </div>
+            <div class="competence competence--js">
+              <span>JavaScript</span>
+            </div>
+            <div class="competence competence--chatgpt">
+              <span>ChatGPT</span>
+            </div>
+          </div>
+      </div>
+
+      <!--
+      <div class="div">
+        <img class="dataplay_fond1" src="assets/images/dataplay_im.jpg" alt="Logo du projet dataplay">
+        <img class="dataplay_fond2" src="assets/images/dataplay_im.jpg" alt="Logo du projet dataplay">
+        <img class="dataplay_fond3" src="assets/images/dataplay_im.jpg" alt="Logo du projet dataplay">
+        <img class="dataplay_fond4" src="assets/images/dataplay_im.jpg" alt="Logo du projet dataplay">
+        <img class="dataplay_fond5" src="assets/images/dataplay_im.jpg" alt="Logo du projet dataplay">
+      </div>-->
+      </div>
+      <div class="pendu">
+        <h2 class="titre titre--medium">JOUONS UN&nbsp;PEU</h2>
+        <div class="wordContainer">
+            <div id="hiddenWord" class="hiddenWord"></div>
+        </div>
+        <div class="numeros">
+          <div class="guessesLeft">Vies restantes : <span id="vies">7</span></div>
+          <div id="score">Score : <span id="points">0</span></div>
+        </div>
+        <div id="letters"></div>
+        <button id="boutonReset" class="boutonReset">Nouvelle partie</button>
+      </div>
     
   </main>
 

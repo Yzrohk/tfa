@@ -176,3 +176,84 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial update to set up slider position
     updateSlider(currentIndex, false);
 });
+
+// Liste de mots à deviner
+const words = ['hello', 'world', 'javascript', 'ordinateur', 'programmation', 'algorithme', 'internet', 'application', 'developpeur', 'balise', 'site', 'mobile', 'ordinateur', 'tablette', 'souris', 'clavier', 'portfolio', 'logiciel', 'processeur', 'ecran', 'variable', 'constante', 'fonction', 'boucle', 'condition', 'interface', 'experience'];
+
+let word; // Mot à deviner
+let guessedWord; // Mot caché (avec les lettres devinées)
+let lives; // Vies restantes
+let score = 0; // Score du joueur
+
+const wordContainer = document.getElementById('hiddenWord');
+const livesDisplay = document.getElementById('vies');
+const lettersContainer = document.getElementById('letters');
+const scoreDisplay = document.getElementById('points');
+
+// Initialisation du jeu
+function initGame() {
+    word = words[Math.floor(Math.random() * words.length)];
+    guessedWord = '_'.repeat(word.length);
+    lives = 7;
+
+    displayWord();
+    displayLetters();
+    updateLivesDisplay();
+}
+
+// Affiche le mot caché avec les lettres devinées
+function displayWord() {
+    wordContainer.textContent = guessedWord.split('').join(' ');
+}
+
+// Affiche les lettres disponibles pour deviner
+function displayLetters() {
+    lettersContainer.innerHTML = '';
+    for (let i = 97; i <= 122; i++) {
+        const letter = String.fromCharCode(i);
+        const btn = document.createElement('button');
+        btn.textContent = letter;
+        btn.addEventListener('click', () => guessLetter(letter));
+        lettersContainer.appendChild(btn);
+    }
+}
+
+// Vérifie si la lettre proposée est dans le mot
+function guessLetter(letter) {
+    if (lives === 0 || guessedWord === word) return; // Arrête le jeu si le joueur a perdu ou gagné
+
+    if (word.includes(letter)) {
+        for (let i = 0; i < word.length; i++) {
+            if (word[i] === letter) {
+                guessedWord = guessedWord.substring(0, i) + letter + guessedWord.substring(i + 1);
+            }
+        }
+        displayWord();
+        if (guessedWord === word) {
+            score++;
+            scoreDisplay.textContent = score;
+            alert('Bravo, vous avez deviné le mot ! C\'était : ' +word);
+            initGame();
+        }
+    } else {
+        lives--;
+        updateLivesDisplay();
+        if (lives === 0) {
+            score = 0;
+            scoreDisplay.textContent = score;
+            alert('Désolé, vous avez perdu. Le mot était : ' + word);
+            initGame();
+        }
+    }
+}
+
+// Met à jour l'affichage des vies restantes
+function updateLivesDisplay() {
+    livesDisplay.textContent = lives;
+}
+
+// Réinitialise le jeu
+document.getElementById('boutonReset').addEventListener('click', initGame);
+
+// Démarrage du jeu
+initGame();

@@ -1,0 +1,114 @@
+@keyframes moveImage1 {
+    0% {
+        transform: translateY(53%) rotate(-27deg);
+    }
+    50% {
+        transform: translateY(463%) rotate(284deg);
+    }
+    100% {
+        transform: translateY(53%) rotate(-27deg);
+    }
+}
+
+@keyframes moveImage2 {
+    0% {
+        transform: translateY(163%) rotate(50deg);
+    }
+    50% {
+        transform: translateY(900%) rotate(-120deg);
+    }
+    100% {
+        transform: translateY(163%) rotate(50deg);
+    }
+}
+
+@keyframes moveImage3 {
+    0% {
+        transform: translateY(245%) rotate(30deg);
+    }
+    50% {
+        transform: translateY(645%) rotate(-180deg);
+    }
+    100% {
+        transform: translateY(245%) rotate(30deg);
+    }
+}
+
+@keyframes moveImage4 {
+    0% {
+        transform: translateY(486%) rotate(20deg);
+    }
+    50% {
+        transform: translateY(256%) rotate(-100deg);
+    }
+    100% {
+        transform: translateY(486%) rotate(20deg);
+    }
+}
+
+@keyframes moveImage5 {
+    0% {
+        transform: translateY(586%) rotate(-10deg);
+    }
+    50% {
+        transform: translateY(1203%) rotate(60deg);
+    }
+    100% {
+        transform: translateY(586%) rotate(-10deg);
+    }
+}
+
+.dataplay_fond1 {
+    width: 100px;
+    left: 15%;
+    z-index: -5;
+    position: absolute;
+    top: 100px;
+    filter: grayscale(100%);
+    opacity: 0.05;
+    animation: moveImage1 10s ease-in-out infinite; /* Animation de déplacement infinie sur 20 secondes */
+}
+
+.dataplay_fond2 {
+    width: 100px;
+    z-index: -5;
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    filter: grayscale(100%);
+    opacity: 0.05;
+    animation: moveImage2 12s ease-in-out infinite; /* Animation de déplacement infinie sur 20 secondes */
+}
+
+.dataplay_fond3 {
+    width: 100px;
+    left: 30%;
+    z-index: -5;
+    position: absolute;
+    top: 700px;
+    filter: grayscale(100%);
+    opacity: 1;
+    animation: moveImage3 8s ease-in-out infinite; /* Animation de déplacement infinie sur 20 secondes */
+}
+
+.dataplay_fond4 {
+    width: 100px;
+    z-index: -5;
+    left: 65%;
+    position: absolute;
+    top: 400px;
+    filter: grayscale(100%);
+    opacity: 1;
+    animation: moveImage4 9s ease-in-out infinite; /* Animation de déplacement infinie sur 20 secondes */
+}
+
+.dataplay_fond5 {
+    width: 100px;
+    z-index: -5;
+    left: 59%;
+    position: absolute;
+    top: 80%;
+    filter: grayscale(100%);
+    opacity: 1;
+    animation: moveImage5 11s ease-in-out infinite; /* Animation de déplacement infinie sur 20 secondes */
+}

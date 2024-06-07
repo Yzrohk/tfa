@@ -12,8 +12,25 @@
     justify-content: center;
 }
 
-@media (min-width: 1200px) {
-    .main, .footer {
-        max-width: 800px;
+@media (min-width: 768px) {
+    .main {
+        display: grid;
+        max-width: 90%;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .titre--big {
+        grid-column: 1 / -1;
+    }
+
+    .about {
+        grid-column: 1 / 2;
+    }
+    .projets {
+        grid-column: 2 / -1;
+    }
+
+    .grille {
+        grid-column: 1 / -1;
     }
 }
